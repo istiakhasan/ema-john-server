@@ -75,4 +75,4 @@ client.connect(err => {
 });
 
 
-app.listen(port,()=>console.log("port 4000 started successfully"))
+app.listen(process.env.PORT || port)
