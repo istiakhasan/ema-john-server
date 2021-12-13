@@ -29,10 +29,10 @@ client.connect(err => {
     })
   })
 
-  //load all products
+
   app.get('/products',(req,res)=>{
     dbproducts.find({})
-    //dbproducts.find({}).limit(20)--if we need to load limited data
+    
     .toArray((err,document)=>{
       res.send(document)
     })
@@ -40,7 +40,7 @@ client.connect(err => {
 
 
 
-  //load single product
+ 
 
   app.get('/product/:key',(req,res)=>{
     dbproducts.find({key:req.params.key})
@@ -50,17 +50,17 @@ client.connect(err => {
   })
 
 
-  //load multiple products
+
  app.post('/productsbykeys',(req,res)=>{
    dbproducts.find({key:{$in:req.body}})
    .toArray((err,document)=>{
       res.send(document)
    })
   
-   console.log(req.body)
+ 
  })
 
- //orderplached
+
  app.post('/addOrder',(req,res)=>{
   const order=req.body
   console.log(order)
