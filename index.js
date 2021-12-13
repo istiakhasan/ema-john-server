@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 const port=4000
 
 app.get('/',(req,res)=>{
-    res.send("lol baby lol")
+    res.send("Deployed successfully")
 })
 
 
